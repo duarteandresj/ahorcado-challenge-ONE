@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ahorcado-One-Alura</title>
-</head>
-<body>
-    <header>
-        <img src="" alt="Logo alura">
-        <h1>titulo de la pagina</h1>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="encabezado">
+      <img
+        src="assets/img/Logo.png"
+        alt="Logo alura"
+        class="encabezado__logo"
+      />
+      <h1 class="encabezado__titulo">Ahorcado-One-Alura</h1>
     </header>
-    <main>
-        <button>Comenzar juego</button>
-        <button>Desistir</button>
-        <section>
-            <img src="" alt="Jengibre">
-            <span>
-                <p>Aca tiene que ir la palabra en guiones</p>
-                <p>letras usadas</p>
-                <p>teclado</p>
-
-            </span>
-
-        </section>
+    <hr>
+    <main class="principal">
+        <div class="maquetado">
+            <canvas width="1280 px" height="600 px" class="lienzo"></canvas>
+        </div>
+      <button>Comenzar juego</button>
+      <button>Desistir</button>
+      <section>
+        <img src="" alt="Jengibre" />
+        <span>
+          <p>Aca tiene que ir la palabra en guiones</p>
+          <p>letras usadas</p>
+          <p>teclado</p>
+        </span>
+      </section>
     </main>
-</body>
+  </body>
 </html>
