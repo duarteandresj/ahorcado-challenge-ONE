@@ -1,28 +1,38 @@
-*{
-    font-family: 'Inter', sans-serif;
+* {
+  font-family: "Inter", sans-serif;
 }
-.encabezado{
-    padding: 0.5rem 0;
+.encabezado {
+  padding: 0.5rem 0;
 }
-.encabezado__logo{
-    margin: 0 0.75rem;
+.encabezado__logo {
+  margin: 0 0.75rem;
 }
-.encabezado__titulo{
-    width: 80%;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    vertical-align: bottom;
-    text-transform: uppercase;
+.encabezado__titulo {
+  width: 80%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  vertical-align: bottom;
+  text-transform: uppercase;
 }
 
-.principal{
-    align-items: center;
+.principal {
+  align-items: center;
 }
-.maquetado{
-    align-items: center;
+.maquetado {
+    display: flex;
+  justify-content: center;
+  width: 100%;
 }
-.lienzo{
-    background-color: aquamarine;
+.lienzo {
+    width: 80%;
+    height: 600px;
+  background-color: aquamarine;
+}
+
+
+/* ocultar pantallas */
+.invisible{
+    display: none;
 }

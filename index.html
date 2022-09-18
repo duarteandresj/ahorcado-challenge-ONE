@@ -24,15 +24,29 @@
       />
       <h1 class="encabezado__titulo">Ahorcado-One-Alura</h1>
     </header>
-    <hr>
+    <hr />
     <main class="principal">
-        <div class="maquetado">
-            <canvas width="1280 px" height="600 px" class="lienzo"></canvas>
-        </div>
-      <button>Comenzar juego</button>
-      <button>Desistir</button>
-      <section>
+      <div class="maquetado invisible">
+        <canvas class="lienzo"></canvas>
+      </div>
+      <div class="invisible">
+        <fieldset>
+          <legend>¿Cómo le gustaría jugar?</legend>
+          <label for="canvas"
+            ><input type="radio" name="juego" value="stick" id="canvas" />
+            Palito</label
+          >
+          <label for="jengibre"
+            ><input type="radio" name="juego" value="jengibre" id="jengibre" />
+            Jengibre</label
+          >
+        </fieldset>
         <img src="" alt="Jengibre" />
+        <button>Comenzar juego</button>
+        <button>Rendirse</button>
+      </div>
+
+      <section>
         <span>
           <p>Aca tiene que ir la palabra en guiones</p>
           <p>letras usadas</p>
