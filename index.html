@@ -25,7 +25,7 @@
       <h1 class="encabezado__titulo">Ahorcado-One-Alura</h1>
     </header>
     <hr />
-    <main class="principal">
+    <main class="main">
       <div class="maquetado invisible">
         <canvas class="lienzo"></canvas>
       </div>
@@ -41,18 +41,22 @@
             Jengibre</label
           >
         </fieldset>
-        <img src="" alt="Jengibre" />
+        <img src="/assets/img/ahorcado1.png" alt="Jengibre" />
         <button>Comenzar juego</button>
         <button>Rendirse</button>
       </div>
 
-      <section>
-        <span>
-          <p>Aca tiene que ir la palabra en guiones</p>
-          <p>letras usadas</p>
-          <p>teclado</p>
-        </span>
-      </section>
+      <div class="pantalla-principal">
+        <button class="btn-primario">Comenzar Juego</button>
+        <button class="btn-secundario btn-agregar">Agregar nueva palabra</button>
+        <div class="pantalla-principal__div invisible">
+          <textarea id="agregar-palabra__txt"></textarea>
+          <button class="div__btn btn-primario">Aceptar</button>
+          <button class="div__btn btn-secundario">Cancelar</button>
+        </div>
+      </div>
     </main>
+    <script src="js/pantalla-agregar.js"></script>
+    <script src="js/sortea-palabras.js"></script>
   </body>
 </html>

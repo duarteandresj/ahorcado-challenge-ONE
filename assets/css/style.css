@@ -1,6 +1,7 @@
 * {
   font-family: "Inter", sans-serif;
 }
+/*Encabezado*/
 .encabezado {
   padding: 0.5rem 0;
 }
@@ -16,23 +17,84 @@
   vertical-align: bottom;
   text-transform: uppercase;
 }
-
-.principal {
+/*principal*/
+.main {
   align-items: center;
 }
 .maquetado {
-    display: flex;
+  display: flex;
   justify-content: center;
   width: 100%;
 }
 .lienzo {
-    width: 80%;
-    height: 600px;
+  width: 80%;
+  height: 600px;
   background-color: aquamarine;
 }
+/*Pantalla principal*/
+.pantalla-principal {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 25%;
+  border: 0.125rem inset red;
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin: 1rem 0 0.5rem 0;
+}
+.btn-primario {
+  background: rgba(133, 133, 216, 0.521);
+}
+.btn-primario:hover{
+  scale: 1.075;
+  background:  rgba(133, 133, 216, 0.75);
+}
+.btn-secundario{
+  background: rgba(216, 173, 133, 0.521);
+}
+.btn-secundario:hover{
+  scale: 1.075;
+  background: rgba(216, 173, 133, 0.75);
+}
 
+/*Agregar palabras*/
+.pantalla-principal__div {
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(126, 126, 126, 0.125);
+  border-radius: 15px;
+} 
+#agregar-palabra__txt {
+  resize: none;
+  width: 90%;
+  height: 20%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0 0.5rem 0;
+  display: block;
+  background-color: rgba(175, 169, 169, 0.25);
+  color: #320707;
+  border-radius: 10px;
+}
+.div__btn{
+  font-size: .75rem;
+  width: auto;
+  padding: 0.25rem;
+  margin: 0 1.2rem;
+}
 
 /* ocultar pantallas */
-.invisible{
-    display: none;
+.invisible {
+  display: none;
 }

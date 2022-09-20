@@ -17,11 +17,11 @@ let letrasEquivocadas=[];
 let palabraSecreta = palabrasGuardadas[index].toUpperCase();
 let palabra=[];
 for(i=0;i<palabraSecreta.length;i++){palabra.push('-')}
-console.log(palabrasGuardadas);
-ayuda();
+// console.log(palabrasGuardadas);
+// ayuda();
 
-
-document.addEventListener(
+const pantallaJugar=document.querySelector(".maquetado");
+pantallaJugar.addEventListener(
   "keydown",
   (event) => {
     var keyValue = event.key.toUpperCase();
