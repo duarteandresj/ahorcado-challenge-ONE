@@ -17,28 +17,11 @@
   vertical-align: bottom;
   text-transform: uppercase;
 }
-/*principal*/
+/*main*/
 .main {
-  align-items: center;
-}
-.maquetado {
   display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.lienzo {
-  width: 80%;
-  height: 600px;
-  background-color: aquamarine;
-}
-/*Pantalla principal*/
-.pantalla-principal {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 button {
   font-size: 1rem;
@@ -64,6 +47,29 @@ button {
   scale: 1.075;
   background: rgba(216, 173, 133, 0.75);
 }
+.maquetado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+/*Pantalla Juego*/
+.canvas {
+  width: 80%;
+  height: 800px;
+  margin: 0 10%;
+}
+/*Pantalla principal*/
+.pantalla-principal {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /*Agregar palabras*/
 .pantalla-principal__div {

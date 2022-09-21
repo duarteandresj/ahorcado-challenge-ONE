@@ -1,3 +1,4 @@
+export {palabra}
 let palabrasGuardadas = [
   "Arbol",
   "Banco",
@@ -12,19 +13,21 @@ let palabrasGuardadas = [
   "Kiosco",
   "Libro","Murcielago","Notebook","Oracle","Puerta","Queso","Ropero","Sarten","Telefono","Urna","Ventisca","Walkman","Xilofono","YoYo","Zapato"
 ];
-let index = parseInt(Math.random() * palabrasGuardadas.length);
+let indice = parseInt(Math.random() * palabrasGuardadas.length);
 let letrasEquivocadas=[];
-let palabraSecreta = palabrasGuardadas[index].toUpperCase();
+let palabraSecreta = palabrasGuardadas[indice].toUpperCase();
 let palabra=[];
-for(i=0;i<palabraSecreta.length;i++){palabra.push('-')}
-// console.log(palabrasGuardadas);
-// ayuda();
+for(let i=0;i<palabraSecreta.length;i++){palabra.push('-')}
+//console.log(palabrasGuardadas);
+
 
 const pantallaJugar=document.querySelector(".maquetado");
-pantallaJugar.addEventListener(
+let activarTeclado=!(pantallaJugar.classList.contains("invisible"))
+if(activarTeclado){
+document.addEventListener(
   "keydown",
   (event) => {
-    var keyValue = event.key.toUpperCase();
+    let keyValue = event.key.toUpperCase();
     let exp = new RegExp("^[A-Z]$");
    
     if (exp.test(keyValue)) {
@@ -54,8 +57,7 @@ pantallaJugar.addEventListener(
   },
   false
 );
-
-
+}
 
 function contarOcurrencias(x, miCadena) {
   let cuenta = 0;

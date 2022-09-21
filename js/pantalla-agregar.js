@@ -1,4 +1,4 @@
-const btnAgregar = document.querySelector(".btn-agregar");
+const btnAgregar = document.querySelector(".btn-pantalla-agregar");
 const divPantallaAgregar = document.querySelector(".pantalla-principal__div");
 const $textoDeEntrada = document.getElementById("agregar-palabra__txt");
 let textoEsValido = true;
@@ -17,7 +17,8 @@ $textoDeEntrada.addEventListener("input",function(){
     }
 })
 function validaTexto(mensaje) {
-    if (/^([A-Z])+$/.test(mensaje)) {
+ let exp=new RegExp('^([A-Z])+$')
+    if (exp.test(mensaje)) {
       textoEsValido = true;
     } else {
       return (textoEsValido = false);
