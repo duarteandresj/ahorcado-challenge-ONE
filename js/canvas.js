@@ -1,4 +1,3 @@
-import{palabra} from "/js/sortea-palabras.js"
 let pantalla = document.querySelector(".canvas");
 let pincel = pantalla.getContext("2d");
 let width = pantalla.width;
@@ -44,11 +43,25 @@ pincel.moveTo(width / 2, 235);
 pincel.lineTo(width / 2 - 50, 235 + 50);
 pincel.stroke();
 
-escribirTexto(width/2-250,420,
-palabra.toString())
+dibujarLineas();
 
 function escribirTexto(x, y, texto) {
   pincel.font = "26px Georgia";
   pincel.fillStyle = "blue";
   pincel.fillText(texto, x, y);
+}
+
+
+function dibujarLineas(){
+  pincel.strokeStyle="blue";
+  pincel.beginPath();
+  
+  let ancho=width/2 / palabraSecreta.length;
+  for(let i=0;i<palabraSecreta.length;i++){
+    pincel.moveTo(width / 2-250 + (ancho*i), 450);
+    pincel.lineTo(width / 2 - 300+(ancho*i), 450);
+    pincel.stroke();
+  }
+
+
 }

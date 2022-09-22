@@ -7,4 +7,3 @@ let ext=".png"
 let rutaEntera=ruta.concat(contador).concat(ext);
   document.getElementById("img").src=rutaEntera;
 }
- 

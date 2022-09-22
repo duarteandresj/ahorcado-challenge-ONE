@@ -14,7 +14,7 @@ function mostrarCanvas(){
     const $canvas=document.querySelector(".canvas");
     btnHorca.parentElement.classList.toggle("invisible");
     $canvas.parentElement.classList.toggle("invisible");
-    btnJuego.classList.toggle("invisible")
+    btnJuego.classList.toggle("invisible");
 }
 function mostrarJengibre(){
     const $jengibre=document.querySelector(".jengibre");
