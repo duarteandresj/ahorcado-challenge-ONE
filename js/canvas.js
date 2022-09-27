@@ -1,6 +1,6 @@
-let $canvas=document.querySelector(".canvas")
+let $canvas = document.querySelector(".canvas");
 let pincel = $canvas.getContext("2d");
-let width =$canvas.width;
+let width = $canvas.width;
 /*HORCA*/
 pincel.strokeStyle = "brown";
 pincel.beginPath();
@@ -41,18 +41,70 @@ pincel.beginPath();
 pincel.moveTo(width / 2, 235);
 pincel.lineTo(width / 2 - 50, 235 + 50);
 pincel.stroke();
-function escribirTexto(x, y, texto) {
-  pincel.font = "26px Georgia";
-  pincel.fillStyle = "blue";
-  pincel.fillText(texto, x, y);
-}
+
 function dibujarLineas() {
   pincel.strokeStyle = "blue";
   pincel.beginPath();
   let ancho = width / 2 / palabraSecreta.length;
   for (let i = 0; i < palabraSecreta.length; i++) {
-    pincel.moveTo(width / 2 - 250 + ancho * i, 450);
-    pincel.lineTo(width / 2 - 300 + ancho * i, 450);
+    pincel.moveTo(width / 2 - 250 + ancho * i, 440);
+    pincel.lineTo(width / 2 - 300 + ancho * i, 440);
     pincel.stroke();
   }
 }
+
+function escribirLetraCorrecta(index) {
+  pincel.font = "bold 26px Inter";
+  pincel.fillStyle = "blue";
+  let ancho = width / 2 / palabraSecreta.length;
+  pincel.fillText(palabraSecreta[index], width / 2 - 300 + ancho * index, 430);
+}
+
+function escribirLetraIncorrecta(letra, errorsLeft) {
+  pincel.font = "bold 20px Inter";
+  pincel.fillStyle = "red";
+  let ancho = width / 2 / palabraSecreta.length;
+  pincel.fillText(letra, width / 2 - 280 + 30 * errorsLeft, 470, ancho);
+}
+
+// function verificarLetraYaClicada(key) {
+//   let salida=false;
+//    if (letrasEquivocadas.includes(key)) {
+//     salida=true;
+//   }
+//   return salida;
+// }
+
+function adicionarLetraCorrecta(i) {
+  palabraCorrecta += palabraSecreta[i].toUpperCase();
+}
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+    let keyValue = event.key.toUpperCase();
+    let exp = new RegExp("^[A-Z]$");
+    if (exp.test(keyValue)&&errores<9) {
+      if (
+        palabraSecreta.includes(keyValue) &&
+        !letrasEquivocadas.includes(keyValue)
+      ) {
+        console.log(keyValue);
+        adicionarLetraCorrecta(palabraSecreta.indexOf(keyValue));
+        for (let i = 0; i < palabraSecreta.length; i++) {
+          if (palabraSecreta[i] === keyValue) {
+            escribirLetraCorrecta(i);
+          }
+        }
+      }
+      else if(!letrasEquivocadas.includes(keyValue)){
+        letrasEquivocadas.push(keyValue);
+        escribirLetraIncorrecta(keyValue, errores);
+        errores++;
+      }
+    }else if(errores=9){
+      alert("fin de juego");
+    } 
+  },
+  false
+);
