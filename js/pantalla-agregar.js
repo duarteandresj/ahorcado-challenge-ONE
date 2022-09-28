@@ -1,26 +1,31 @@
-const btnAgregar = document.querySelector(".btn-pantalla-agregar");
+const $btnAgregar = document.querySelector(".btn-pantalla-agregar");
 const divPantallaAgregar = document.querySelector(".pantalla-principal__div");
 const $textoDeEntrada = document.getElementById("agregar-palabra__txt");
-let textoEsValido = true;
-function mostrarUOcultarPantalla() {divPantallaAgregar.classList.toggle("invisible");
+const $btnAceptar = document.querySelector(".agrega-palabra");
+const $btnCancelar = document.querySelector(".cancela-palabra");
+let textoEsValido = false;
+function mostrarUOcultarPantalla() {
+  divPantallaAgregar.classList.toggle("invisible");
 }
-
-btnAgregar.addEventListener("click", mostrarUOcultarPantalla);
-
-
-$textoDeEntrada.addEventListener("input",function(){
-    validaTexto($textoDeEntrada.value)
-    if(!textoEsValido){
-       console.log("ERROR")
-    }else{
-        console.log("Ok")
-    }
-})
 function validaTexto(mensaje) {
- let exp=new RegExp('^([A-Z])+$')
-    if (exp.test(mensaje)) {
-      textoEsValido = true;
-    } else {
-      return (textoEsValido = false);
-    }
-}  
+  let exp = new RegExp("^([A-Z])*$");
+  if (exp.test(mensaje)) {
+    textoEsValido = true;
+  } else {
+    textoEsValido = false;
+  }
+}
+$btnAgregar.addEventListener("click", mostrarUOcultarPantalla);
+$btnAceptar.addEventListener("click", () => {
+  validaTexto($textoDeEntrada.value);
+  if (textoEsValido) {
+    palabrasGuardadas.push($textoDeEntrada.value);
+    $textoDeEntrada.value = "";
+  } else {
+    document.querySelector(".agregar__span").classList.remove("invisible");
+  }
+});
+$btnCancelar.addEventListener("click", () => {
+  mostrarUOcultarPantalla();
+  $textoDeEntrada.value = "";
+});
