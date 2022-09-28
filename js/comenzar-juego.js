@@ -5,6 +5,7 @@ const btnHorca = document.querySelector(".horca__btn");
 const btnJengibre = document.querySelector(".jengibre__btn");
 const botoneraJuego = document.querySelector(".botonera-juego");
 const btnJugar = document.querySelector(".comenzar-juego__btn");
+const btnRendir=document.querySelector(".rendirse")
 
 function mostrarTablero() {
   btnComenzar.parentElement.classList.toggle("invisible");
@@ -28,8 +29,14 @@ function mostrarJengibre() {
 btnComenzar.addEventListener("click", mostrarTablero);
 btnHorca.addEventListener("click", mostrarCanvas);
 btnJugar.addEventListener("click", () => {
-  sortearPalabra();
+  iniciarJuego();
   $canvas.width=$canvas.width//limpia la pantalla del canvas
   dibujarLineas();
 });
 btnJengibre.addEventListener("click", mostrarJengibre);
+
+btnRendir.addEventListener("click",()=>{
+  $canvas.width=$canvas.width//limpia la pantalla del canvas
+  escuchaTeclado=false;
+  mostrarTablero();
+})

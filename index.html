@@ -36,9 +36,10 @@
         </button>
         <!-- Pantalla agregar Palabra -->
         <div class="pantalla-principal__div invisible">
+          <span class="agregar__span invisible">Sólo palabras en mayusculas y sin espacios</span>
           <textarea id="agregar-palabra__txt"></textarea>
-          <button class="div__btn btn-primario">Aceptar</button>
-          <button class="div__btn btn-secundario">Cancelar</button>
+          <button class="div__btn btn-primario agrega-palabra">Aceptar</button>
+          <button class="div__btn btn-secundario cancela-palabra">Cancelar</button>
         </div>
       </div>
       <!-- Pantalla de juego -->
@@ -63,10 +64,31 @@
           <button class=" div__btn btn-secundario rendirse">Rendirse</button>
         </section>
       </div>
+      <footer>
+        <div class="contacto">
+          <p>Desarrolado por Duarte Andres</p>
+          <p>© ONE- Oracle Next Education - Alura Latam - 2022</p>
+          <ul>
+            <li>
+              <img src="/assets/img/linkedin.png" alt="Linkedin" /><a
+                href="https://www.linkedin.com/in/andres-duarte-8896b1197/"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <img src="/assets/img/github.png" alt="GitHub" /><a
+                href="https://github.com/duarteandresj"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+      </footer>
     </main>
     <script src="js/comenzar-juego.js" ></script>
     <script src="js/pantalla-agregar.js" ></script>
     <script src="js/sortea-palabras.js" ></script>
+    <script src="js/escucha-teclado.js"></script>
     <script src="js/canvas.js" ></script>
     <script src="js/cambiar-src-imagen.js" ></script>
   </body>

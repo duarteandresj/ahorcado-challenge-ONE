@@ -19,7 +19,6 @@
 }
 /*main*/
 .main {
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -48,22 +47,28 @@ button {
   background: rgba(216, 173, 133, 0.75);
 }
 .maquetado {
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+ 
 }
 /*Pantalla Juego*/
 .canvas {
   width: 80%;
-  height: 800px;
+  height: 60vh;
   margin: 0 10%;
+}
+.botonera-juego{
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 /*Pantalla principal*/
 .pantalla-principal {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,11 +91,22 @@ button {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  margin: 2rem 0 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   display: block;
   background-color: rgba(175, 169, 169, 0.25);
   color: #320707;
   border-radius: 10px;
+}
+.agregar__span::before{
+  content: 	"\26A0";
+  margin-right: 0.5rem;}
+.agregar__span{
+  margin-top: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: .75rem;
+  color: red;
 }
 .div__btn {
   font-size: 0.75rem;
@@ -106,4 +122,39 @@ button {
 .jengibre {
   width: 250px;
   height: 185px;
+}
+/* footer */
+footer {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+  text-align: center;
+  background: #636363;
+  color: #f3f5fc;
+  font-size: 14px;
+  padding: 1% 0;
+}
+.contacto {
+  width: 50vw;
+  display: inline-block;
+}
+.contacto p {
+  font-style: italic;
+  margin: 0 0 0 15px;
+}
+.contacto img {
+  width: 1rem;
+  padding: 0 0.1rem;
+}
+.contacto ul {
+  margin: 1rem 0;
+}
+
+.contacto li {
+  display: inline;
+  padding-left: 1rem;
 }
