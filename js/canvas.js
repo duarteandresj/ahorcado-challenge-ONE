@@ -84,10 +84,10 @@ function escribirLetraIncorrecta(letra, errorsLeft) {
 function adicionarLetraCorrecta(i) {
   palabraCorrecta += palabraSecreta[i].toUpperCase();
 }
-function escribirPantalla1(mensaje) {
+function escribirPantalla1(mensaje,color) {
   $canvas.width=$canvas.width//limpia la pantalla del canvas
   pincel.font = "bold 50px Inter";
-  pincel.fillStyle = "Red";
+  pincel.fillStyle = color;
   pincel.fillText(mensaje, width /4 , 240);
 }
 

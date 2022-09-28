@@ -27,15 +27,16 @@ document.addEventListener("keydown", (event) => {
 
 document.addEventListener("keyup", () => {
   if (escuchaTeclado) {
-    finDeJuego = palabraCorrecta.length == contarLetrasUnicas(palabraSecreta);
+    finDeJuego =
+      contarLetrasUnicas(palabraCorrecta) == contarLetrasUnicas(palabraSecreta);
     if (errores === 7) {
       setTimeout(() => {
-        escribirPantalla1("Perdiste, T.T");
+        escribirPantalla1("Perdiste, T.T", "red");
         escribirPantalla2(`La palabra era: ${palabraSecreta}`);
       }, 100);
     } else if (finDeJuego) {
       setTimeout(() => {
-        escribirPantalla1("Ganaste, felicitaciones");
+        escribirPantalla1("Ganaste, felicitaciones", "green");
         escribirPantalla2(`La palabra era: ${palabraSecreta}`);
       }, 100);
     }

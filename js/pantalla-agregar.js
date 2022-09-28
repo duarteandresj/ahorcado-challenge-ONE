@@ -21,6 +21,11 @@ $btnAceptar.addEventListener("click", () => {
   if (textoEsValido) {
     palabrasGuardadas.push($textoDeEntrada.value);
     $textoDeEntrada.value = "";
+    document.querySelector(".agregar__span").innerHTML="PALABRA AGREGADA";
+    document.querySelector(".agregar__span").classList.remove("invisible");
+    setTimeout(() => {
+      document.querySelector(".agregar__span").classList.add("invisible");
+    }, 1000);
   } else {
     document.querySelector(".agregar__span").classList.remove("invisible");
   }
