@@ -1,6 +1,5 @@
 * {
   font-family: "Inter", sans-serif;
-
 }
 /*Encabezado*/
 .encabezado {
@@ -12,7 +11,7 @@
 }
 .encabezado__titulo {
   width: 80%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   display: inline-block;
@@ -50,6 +49,13 @@ button {
   scale: 1.075;
   background: rgba(216, 173, 133, 0.75);
 }
+.div__btn {
+  font-size: 0.75rem;
+  width: auto;
+  padding: 0.25rem;
+  margin: 0 1.2rem;
+}
+/*Pantalla Juego*/
 .maquetado {
   height: 80vh;
   display: flex;
@@ -57,9 +63,7 @@ button {
   align-items: center;
   flex-direction: column;
   width: 100%;
- 
 }
-/*Pantalla Juego*/
 .canvas {
   width: 80%;
   height: 60vh;
@@ -88,7 +92,23 @@ button {
   background-color: rgba(126, 126, 126, 0.125);
   border-radius: 15px;
 }
-#agregar-palabra__txt {
+.agregar__span::before{
+  content: 	"\26A0";
+  margin-right: 0.5rem;}
+.agregar__span{
+  margin-top: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: .75rem;
+  color: red;
+}
+.jengibre {
+  width: 250px;
+  height: 185px;
+}
+/*textareas*/
+#agregar-palabra__txt,#textarea-img,#textarea-img_incorrectas{
   resize: none;
   width: 90%;
   height: 20%;
@@ -101,32 +121,14 @@ button {
   color: #320707;
   border-radius: 10px;
 }
-.agregar__span::before{
-  content: 	"\26A0";
-  margin-right: 0.5rem;}
-.agregar__span{
-  margin-top: 1rem;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  font-size: .75rem;
-  color: red;
-}
-.div__btn {
+#textarea-img_incorrectas{
+  display: inline-block;
   font-size: 0.75rem;
-  width: auto;
-  padding: 0.25rem;
-  margin: 0 1.2rem;
+  color: red;
+  height: 10%;
+  margin: 0.5rem 0;
 }
 
-/* ocultar pantallas */
-.invisible {
-  display: none;
-}
-.jengibre {
-  width: 250px;
-  height: 185px;
-}
 /* footer */
 footer {
   padding: 0.5rem;
@@ -161,4 +163,8 @@ footer {
 .contacto li {
   display: inline;
   padding-left: 1rem;
+}
+/* ocultar pantallas */
+.invisible {
+  display: none;
 }

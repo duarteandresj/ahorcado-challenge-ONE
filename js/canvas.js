@@ -82,7 +82,8 @@ function escribirLetraIncorrecta(letra, errorsLeft) {
 }
 
 function adicionarLetraCorrecta(i) {
-  palabraCorrecta += palabraSecreta[i].toUpperCase();
+  if(!palabraCorrecta.includes(palabraSecreta[i])){
+   palabraCorrecta += palabraSecreta[i].toUpperCase();}
 }
 function escribirPantalla1(mensaje,color) {
   $canvas.width=$canvas.width//limpia la pantalla del canvas

@@ -32,6 +32,7 @@ let palabraSecreta;
 let errores = 0;
 let escuchaTeclado = false;
 let finDeJuego = false;
+let palabra=[];
 
 function iniciarJuego() {
   let indice = parseInt(Math.random() * palabrasGuardadas.length);
@@ -40,16 +41,27 @@ function iniciarJuego() {
   palabraCorrecta = "";
   letrasEquivocadas = [];
   escuchaTeclado = true;
+  palabra=[];
+  rellenarPalabra();
+  $textArea.innerText=palabra;
+  $textAreaIncorrectas.innerText="";
+  cambiarImagenJS(errores);
 }
 
-function contarLetrasUnicas(palabra) {
-  palabra = palabra.toUpperCase();
-  let max = 0;
-  for (let i = 0; i < palabra.length; i++) {
-    let aux = palabra.indexOf(palabra[i]) + 1;
-    if (aux > max) {
-      max = aux;
+function contarLetrasUnicas(algunString) {
+  algunString = algunString.toUpperCase();
+  let aux=[];
+  for(let i=0;i<algunString.length;i++){
+    if(!aux.includes(algunString[i]))
+      aux.push(algunString[i]);
+  }
+  return aux.length;
+}
+
+function rellenarPalabra(){
+  if(jengibreSeleccionado){
+    for(let i=0;i<palabraSecreta.length;i++){
+      palabra[i]=" _ "
     }
   }
-  return max;
 }

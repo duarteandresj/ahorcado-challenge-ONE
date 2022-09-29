@@ -42,3 +42,48 @@ document.addEventListener("keyup", () => {
     }
   }
 });
+
+/*Jengibre */
+document.addEventListener("keydown", (event) => {
+  if (escuchaTeclado&&jengibreSeleccionado) {
+    keyValue = event.key.toUpperCase();
+    let letraValida = exp.test(keyValue);
+    if (letraValida && errores < 7 && !finDeJuego) {
+      if (
+        palabraSecreta.includes(keyValue) &&
+        !letrasEquivocadas.includes(keyValue)
+      ) {
+        adicionarLetraCorrecta(palabraSecreta.indexOf(keyValue));
+        for (let i = 0; i < palabraSecreta.length; i++) {
+          if (palabraSecreta[i] === keyValue) {
+            palabra[i]=keyValue;
+          }
+          $textArea.innerText=palabra;
+        }
+      } else if (!letrasEquivocadas.includes(keyValue)) {
+        letrasEquivocadas.push(keyValue);
+        errores++;
+      
+       
+      }
+      
+      }cambiarImagenJS(errores)
+      $textAreaIncorrectas.innerText=letrasEquivocadas;
+  }
+});
+
+document.addEventListener("keyup", () => {
+  if (escuchaTeclado&&jengibreSeleccionado) {
+    finDeJuego =
+      contarLetrasUnicas(palabraCorrecta) == contarLetrasUnicas(palabraSecreta);
+    if (errores === 7) {
+      setTimeout(() => {
+        $textArea.innerText=`Perdiste, palabra: \n ${palabraSecreta}`; 
+      }, 100);
+    } else if (finDeJuego) {
+      setTimeout(() => {
+        $textArea.innerText="Ganaste, Felicitaciones";
+      }, 100);
+    }
+  }
+});
