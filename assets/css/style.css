@@ -34,6 +34,7 @@ button {
   border-radius: 10px;
   padding: 0.75rem;
   margin: 1rem 0 0.5rem 0;
+  transition: all 0.3s ease-in-out;
 }
 .btn-primario {
   background: rgba(133, 133, 216, 0.521);
@@ -137,7 +138,6 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 8vh;
   text-align: center;
   background-color: #75a9b9;
   color: #f3f5fc;
@@ -152,17 +152,28 @@ footer {
   font-style: italic;
   margin: 0 0 0 15px;
 }
-.contacto img {
-  width: 1rem;
-  padding: 0 0.1rem;
-}
+
 .contacto ul {
   margin: 1rem 0;
 }
-
 .contacto li {
   display: inline;
   padding-left: 1rem;
+}
+.contacto a {
+  text-decoration: none;
+  color: aqua;
+  margin: 0 0 0 15px;
+}
+.contacto i {
+  color: black;
+  font-size: 1rem;
+  padding: 0rem 0.5rem;
+  transition: all 0.3s ease-in-out
+}
+.contacto i:hover{
+  transform: translateY(-5px);
+  font-size: 200%;
 }
 /* ocultar pantallas */
 .invisible {
